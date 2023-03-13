@@ -14,14 +14,17 @@ function Explore() {
         <Slider/>
         <div className='exploreCategoryHeading'>
           <div className="exploreCategories">
-            <Link to='/category/rent'>
+           
+            <Link to='/house-marketplace/category/rent'>
               <img className='exploreCategoryImg' src={rentCategoryImage} alt="Rent Category" />
               <p>Place for rent</p>
             </Link>
+           
             <Link to='/house-marketplace/category/sale'>
               <img className='exploreCategoryImg' src={sellCategoryImage} alt="Sell Category" />
               <p>Place for sell</p>
             </Link>
+          
           </div>
           <div className="exploreCategories">
           </div>

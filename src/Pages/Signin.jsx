@@ -94,7 +94,7 @@ function Signin() {
 
         <Oauth/>
 
-        <Link to='/sign-up' className='registerLink'>Sign Up</Link>
+        <Link to='/house-marketplace/sign-up' className='registerLink'>Sign Up</Link>
 
       </main>
     </div>
