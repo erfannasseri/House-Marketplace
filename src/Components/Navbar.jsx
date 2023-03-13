@@ -19,7 +19,7 @@ function Navbar() {
             <ul className="navbarListItems">
                
                 <li className="navbarListItem">
-                    <ExploreIcon fill={ pathMatchRoute('/house-marketplace') ? '#2c2c2c' :'#8f8f8f'} width='36px' height='36px' onClick={()=> navigate('/')}/>
+                    <ExploreIcon fill={ pathMatchRoute('/house-marketplace') ? '#2c2c2c' :'#8f8f8f'} width='36px' height='36px' onClick={()=> navigate('/house-marketplace')}/>
                     <p className={pathMatchRoute('/house-marketplace') ? 'navbarListItemNameActive':'navbarListItemName' }>Explore</p>
                 </li>
               
@@ -42,7 +42,7 @@ function Navbar() {
                     fill={ pathMatchRoute('/house-marketplace/profile') ? '#2c2c2c' :'#8f8f8f'} 
                     width='36px' height='36px' 
                     onClick={()=> 
-                    navigate('/profile')}/>
+                    navigate('/house-marketplace/profile')}/>
                     <p className={pathMatchRoute('/house-marketplace/profile') ? 'navbarListItemNameActive':'navbarListItemName' }>
                         Profile
                     </p>
