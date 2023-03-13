@@ -33,7 +33,7 @@ function App() {
         <Route path='/house-marketplace/forgot-password' element={<ForgotPassword/>} />
         <Route path='/house-marketplace/create-listing' element={<CreateListing/>} />
         <Route path='/house-marketplace/edit-listing/:listingId' element={<EditListing/>} />
-        <Route path='/contact/:landlordId' element={<Contact/>} />
+        <Route path='/house-marketplace/contact/:landlordId' element={<Contact/>} />
         <Route path='/house-marketplace/category/:categoryName/:listingId' element={<Listing/>} />
       </Routes> 
       <Navbar/>
