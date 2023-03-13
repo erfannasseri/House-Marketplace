@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { ReactComponent as ArrowRightIcone } from '../assets/svg/keyboardArrowRightIcon.svg'
-import { async } from '@firebase/util'
+
 
 
 function ForgotPassword() {
@@ -40,7 +40,7 @@ function ForgotPassword() {
             value={email}
             placeholder='Email'
               />
-          <Link className='forgotPasswordLink' to={'/sign-in'}>Sign in</Link>
+          <Link className='forgotPasswordLink' to={'/house-marketplace/sign-in'}>Sign in</Link>
            <div className='signInBar'>
               <div className='signInText'>Send Reset Link</div>
               <button className=' signInButton'>

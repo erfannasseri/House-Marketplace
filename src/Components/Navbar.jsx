@@ -19,31 +19,31 @@ function Navbar() {
             <ul className="navbarListItems">
                
                 <li className="navbarListItem">
-                    <ExploreIcon fill={ pathMatchRoute('/') ? '#2c2c2c' :'#8f8f8f'} width='36px' height='36px' onClick={()=> navigate('/')}/>
-                    <p className={pathMatchRoute('/') ? 'navbarListItemNameActive':'navbarListItemName' }>Explore</p>
+                    <ExploreIcon fill={ pathMatchRoute('/house-marketplace') ? '#2c2c2c' :'#8f8f8f'} width='36px' height='36px' onClick={()=> navigate('/')}/>
+                    <p className={pathMatchRoute('/house-marketplace') ? 'navbarListItemNameActive':'navbarListItemName' }>Explore</p>
                 </li>
               
                 <li className="navbarListItem" 
                 onClick={()=> 
-                navigate('/offer')}>
+                navigate('/house-marketplace/offer')}>
                     <OfferIcon 
-                    fill={ pathMatchRoute('/offer') 
+                    fill={ pathMatchRoute('/house-marketplace/offer') 
                     ? '#2c2c2c' 
                     :'#8f8f8f'} 
                     width='36px' 
                     height='36px' />
-                    <p className={pathMatchRoute('/offer') ? 'navbarListItemNameActive':'navbarListItemName' }>
+                    <p className={pathMatchRoute('/house-marketplace/offer') ? 'navbarListItemNameActive':'navbarListItemName' }>
                         Offers
                     </p>
                 </li>
               
                 <li className="navbarListItem">
                     <PersonOutlineIcon 
-                    fill={ pathMatchRoute('/profile') ? '#2c2c2c' :'#8f8f8f'} 
+                    fill={ pathMatchRoute('/house-marketplace/profile') ? '#2c2c2c' :'#8f8f8f'} 
                     width='36px' height='36px' 
                     onClick={()=> 
                     navigate('/profile')}/>
-                    <p className={pathMatchRoute('/profile') ? 'navbarListItemNameActive':'navbarListItemName' }>
+                    <p className={pathMatchRoute('/house-marketplace/profile') ? 'navbarListItemNameActive':'navbarListItemName' }>
                         Profile
                     </p>
                 </li>

@@ -59,7 +59,7 @@ function CreateListing() {
         if (user) {
           setFormData({ ...formData, userRef: user.uid })
         } else {
-          navigate('/sign-in')
+          navigate('/house-marketplace/sign-in')
         }
       })
     }
@@ -179,7 +179,7 @@ function CreateListing() {
     const docRef = await addDoc(collection(db, 'listing'), formDataCopy)
     setLoading(false)
     toast.success('Listing saved')
-    navigate(`/category/${formDataCopy.type}/${docRef.id}`)
+    navigate(`/house-marketplace/category/${formDataCopy.type}/${docRef.id}`)
   }
 
   const onMutate = (e) => {

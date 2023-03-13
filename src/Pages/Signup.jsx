@@ -49,7 +49,7 @@ function Signup() {
      
       await setDoc(doc(db,'users',user.uid),formDataCopy)
      
-      navigate('/')
+      navigate('/house-marketplace')
     } catch (error) {
       toast.error('Somthing went wrong with registration')
       console.log(error)
@@ -107,7 +107,7 @@ function Signup() {
 
         <Oauth/>
 
-        <Link to='/sign-in' className='registerLink'>Sign In</Link>
+        <Link to='/house-marketplace/sign-in' className='registerLink'>Sign In</Link>
 
       </main>
     </div>

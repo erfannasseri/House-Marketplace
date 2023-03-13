@@ -55,7 +55,7 @@ function Slider() {
           {listings.map(({ data, id }) => (
             <SwiperSlide
               key={id}
-              onClick={() => navigate(`/category/${data.type}/${id}`)}
+              onClick={() => navigate(`/house-marketplace/category/${data.type}/${id}`)}
             >
               <div
                 style={{

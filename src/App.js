@@ -22,19 +22,19 @@ function App() {
     <>
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Explore/>} />
-        <Route path='/offer' element={<Offer/>} />
-        <Route path='/category/:categoryName' element={<Category/>} />
-        <Route path='/profile' element={<PrivetRoute/>}>
-          <Route path='/profile' element={<Profile/>} />
+        <Route path='/house-marketplace' element={<Explore/>} />
+        <Route path='/house-marketplace/offer' element={<Offer/>} />
+        <Route path='/house-marketplace/category/:categoryName' element={<Category/>} />
+        <Route path='/house-marketplace/profile' element={<PrivetRoute/>}>
+          <Route path='/house-marketplace/profile' element={<Profile/>} />
         </Route>
-        <Route path='/sign-in' element={<Signin/>} />
-        <Route path='/sign-up' element={<Signup/>} />
-        <Route path='/forgot-password' element={<ForgotPassword/>} />
-        <Route path='/create-listing' element={<CreateListing/>} />
-        <Route path='/edit-listing/:listingId' element={<EditListing/>} />
+        <Route path='/house-marketplace/sign-in' element={<Signin/>} />
+        <Route path='/house-marketplace/sign-up' element={<Signup/>} />
+        <Route path='/house-marketplace/forgot-password' element={<ForgotPassword/>} />
+        <Route path='/house-marketplace/create-listing' element={<CreateListing/>} />
+        <Route path='/house-marketplace/edit-listing/:listingId' element={<EditListing/>} />
         <Route path='/contact/:landlordId' element={<Contact/>} />
-        <Route path='/category/:categoryName/:listingId' element={<Listing/>} />
+        <Route path='/house-marketplace/category/:categoryName/:listingId' element={<Listing/>} />
       </Routes> 
       <Navbar/>
     </BrowserRouter>

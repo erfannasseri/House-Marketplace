@@ -39,7 +39,7 @@ function Signin() {
         password
       )
       if (userCredential.user) {
-        navigate('/')
+        navigate('/house-marketplace')
         toast.done('شما باموفقیت وارد شدید')
       }
     } catch (error) {
@@ -78,7 +78,7 @@ function Signin() {
               <img src={visibilityIcon} alt="Show Password" className="showPassword" onClick={()=>setShowPass((prevState)=>!prevState)}/>
               {/*showPass?<p Curssor='select' onClick={()=>setShowPass((prevState)=>!prevState)}>Hide</p>:<p onClick={()=>setShowPass((prevState)=>!prevState)}>Show</p>*/}
           </div>
-          <Link to='/forgot-password'
+          <Link to='/house-marketplace/forgot-password'
           className='forgotPasswordLink'>
             Forget Password
           </Link>

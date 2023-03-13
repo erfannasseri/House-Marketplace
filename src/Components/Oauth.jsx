@@ -29,7 +29,7 @@ function Oauth() {
                     timestamp:serverTimestamp()
                 })
             }
-            navigate('/')
+            navigate('/house-marketplace')
             toast.success('You are sign in')
        } catch (error) {
         toast.error('Could not authorize with Google')

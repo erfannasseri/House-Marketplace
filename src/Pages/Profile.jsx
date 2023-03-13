@@ -37,7 +37,7 @@ function Profile() {
   
   const onLogOut = ()=>{
     auth.signOut()
-    navigate('/')
+    navigate('/house-marketplace')
   }
   useEffect(() => {
     const fetchUserListings = async () => {
@@ -78,7 +78,7 @@ function Profile() {
     }
   }
 
-  const onEdit = (listingId) => navigate(`/edit-listing/${listingId}`)
+  const onEdit = (listingId) => navigate(`/house-marketplace/edit-listing/${listingId}`)
 
   const onSubmit = async ()=>{
     try {
@@ -142,7 +142,7 @@ function Profile() {
           onChange={onChange}
           />
         </div>
-        <Link to='/create-listing' className='createListing'>
+        <Link to='/house-marketplace/create-listing' className='createListing'>
           <img src={homeIcon} alt="home" />
           <p>Sell or rent your home</p>
           <img src={arrowRight} alt="arrowRight" />
