@@ -69,9 +69,9 @@ function Profile() {
 
   const onDelete = async (listingId) => {
     if (window.confirm('Are you sure you want to delete?')) {
-      await deleteDoc(doc(db, 'listings', listingId))
+      await deleteDoc(doc(db, 'listing', listingId))
       const updatedListings = listings.filter(
-        (listing) => listing.id !== listingId
+        (listing) => listings.id !== listingId
       )
       setListings(updatedListings)
       toast.success('Successfully deleted listing')
