@@ -20,20 +20,20 @@ function Navbar() {
                
                 <li className="navbarListItem">
                     <ExploreIcon fill={ pathMatchRoute('/house-marketplace') ? '#2c2c2c' :'#8f8f8f'} width='36px' height='36px' onClick={()=> navigate('/house-marketplace')}/>
-                    <p className={pathMatchRoute('/house-marketplace') ? 'navbarListItemNameActive':'navbarListItemName' }>Explore</p>
+                    <p className={pathMatchRoute('/house-marketplace') ? 'navbarListItemNameActive':'navbarListItemName' }>اکسپلور</p>
                 </li>
               
                 <li className="navbarListItem" 
                 onClick={()=> 
-                navigate('/house-marketplace/offer')}>
+                navigate('/house-marketplace/create-listing')}>
                     <OfferIcon 
-                    fill={ pathMatchRoute('/house-marketplace/offer') 
+                    fill={ pathMatchRoute('/house-marketplace/create-listing') 
                     ? '#2c2c2c' 
                     :'#8f8f8f'} 
                     width='36px' 
                     height='36px' />
-                    <p className={pathMatchRoute('/house-marketplace/offer') ? 'navbarListItemNameActive':'navbarListItemName' }>
-                        Offers
+                    <p className={pathMatchRoute('/house-marketplace/create-listing') ? 'navbarListItemNameActive':'navbarListItemName' }>
+                        افزودن
                     </p>
                 </li>
               
@@ -44,7 +44,7 @@ function Navbar() {
                     onClick={()=> 
                     navigate('/house-marketplace/profile')}/>
                     <p className={pathMatchRoute('/house-marketplace/profile') ? 'navbarListItemNameActive':'navbarListItemName' }>
-                        Profile
+                        پروفایل
                     </p>
                 </li>
 

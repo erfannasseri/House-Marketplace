@@ -17,6 +17,7 @@ import {
 } from 'firebase/firestore'
 import { useState, useEffect } from 'react'
 import Listingitem from '../Components/ListingItem'
+import Listings from '../Components/Listings'
 
 
 
@@ -65,7 +66,7 @@ function Profile() {
     }
 
     fetchUserListings()
-  }, [auth.currentUser.uid])
+  }, [auth.currentUser.uid || Listings ])
 
   const onDelete = async (listingId) => {
     if (window.confirm('Are you sure you want to delete?')) {
@@ -108,23 +109,23 @@ function Profile() {
   }
 
   return (
-    <div className="profile">
+    <div className="profile rtl">
       <header className='profileHeader'>
-        <p className='pageHeader'>My Profile</p>
-        <button type='button' className='logOut' onClick={onLogOut}>LogOut</button>
+        <p className='pageHeader'>پروفایل من</p>
+        <button type='button' className='logOut' onClick={onLogOut}>خروج</button>
       </header>
       <main>
         <div className="profileDetailsHeader">
           <p className="profileDetailsText">
-             Personal Details
+             اطلاعات شخصی
           </p>
           <p className='changePersonalDetails' onClick={()=>{
             changeDetails && onSubmit()
             setChangeDetails((prevState)=>!prevState)
-          }}> {changeDetails ? 'Done':'Change'} </p>
+          }}> {changeDetails ? 'انجام شد':'تغییر'} </p>
         </div>
 
-        <div className="profileCard">
+        <div className="profileCard ltr">
           <input 
           type="text" 
           id="name" 
@@ -144,13 +145,13 @@ function Profile() {
         </div>
         <Link to='/house-marketplace/create-listing' className='createListing'>
           <img src={homeIcon} alt="home" />
-          <p>Sell or rent your home</p>
+          <p>فروش یا اجاره منزل شما</p>
           <img src={arrowRight} alt="arrowRight" />
         </Link>
         {!loading && listings?.length > 0 && (
           <>
-            <p className='listingText'>Your Listings</p>
-            <ul className='listingsList'>
+            <p className='listingText'>آگهی های شما</p>
+            <div>
               {listings.map((listing) => (
                 <Listingitem
                   key={listing.id}
@@ -160,7 +161,7 @@ function Profile() {
                   onEdit={() => onEdit(listing.id)}
                 />
               ))}
-            </ul>
+            </div>
           </>
         )}
       </main>

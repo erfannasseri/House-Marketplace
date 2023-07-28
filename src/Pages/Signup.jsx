@@ -61,7 +61,7 @@ function Signup() {
     
     <div className="pageContainer">
       <header>
-        <p className='pageHeader'>Welcome Back</p>
+        <p className='pageHeader'>صفحه ثبت نام</p>
       </header>
       <main>
         <form onSubmit={onSubmit}>
@@ -69,7 +69,7 @@ function Signup() {
             <input 
               type="text" 
               className="nameInput"
-              placeholder='Name'
+              placeholder='نام'
               id='name'
               value={name}
               onChange={onChange} />
@@ -78,7 +78,7 @@ function Signup() {
             <input 
               type="email" 
               className="emailInput"
-              placeholder='Email'
+              placeholder='ایمیل'
               id='email'
               value={email}
               onChange={onChange} />
@@ -87,7 +87,7 @@ function Signup() {
           <input 
               type={showPass?'text':'password'} 
               className="passwordInput"
-              placeholder='Password'
+              placeholder='رمزعبور'
               id='password'
               value={password}
               onChange={onChange}
@@ -97,7 +97,7 @@ function Signup() {
           </div>
           <div className="signUpBar">
             <p className="p signUpText">
-              Sign Up
+              ثبت نام
             </p>
             <button className='signUpButton'>
               <ArrowRightIcon fill='white' width='40px' height='40px' /> 
@@ -107,7 +107,7 @@ function Signup() {
 
         <Oauth/>
 
-        <Link to='/house-marketplace/sign-in' className='registerLink'>Sign In</Link>
+        <Link to='/house-marketplace/sign-in' className='registerLink'>ورود</Link>
 
       </main>
     </div>

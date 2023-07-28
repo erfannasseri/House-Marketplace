@@ -25,7 +25,7 @@ function Category() {
                     listingRef,
                     where('type','==',params.categoryName),
                     orderBy('timestamp','desc'),
-                    limit(1) 
+                    limit(10) 
                 )
                 //Exxcute query
                 const querySnap = await getDocs(q)
@@ -51,7 +51,7 @@ function Category() {
 
         fetchListings()
     }, [params.categoryName])
-
+    
      // Pagination / Load More
   const onFetchMoreListings = async () => {
     try {
@@ -64,7 +64,7 @@ function Category() {
         where('type', '==', params.categoryName),
         orderBy('timestamp', 'desc'),
         startAfter(lastFetchedListing),
-        limit(1)
+        limit(10)
       )
 
       // Execute query
@@ -93,7 +93,7 @@ function Category() {
     return (
     <div className='category'>
         <header>
-            <p className='pageHeader'> Places for {params.categoryName}</p>
+            <p className='pageHeader'> {params.categoryName==="rent"?"املاک برای اجاره":"املاک برای فروش"}</p>
         </header>
         {loading ? <Spinner/>:listings && listings.length>0 ?
         <>

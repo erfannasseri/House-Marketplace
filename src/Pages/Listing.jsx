@@ -1,15 +1,14 @@
 import { useState, useEffect } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-//import { Helmet } from 'react-helmet'
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
-import { Swiper, SwiperSlide } from 'swiper/react'
- import 'swiper/swiper-bundle.css'
+import Slider from "react-slick";
+
 import { getDoc, doc } from 'firebase/firestore'
 import { getAuth } from 'firebase/auth'
 import { db } from '../firebase.config'
 import Spinner from '../Components/Spinner'
 import shareIcon from '../assets/svg/shareIcon.svg'
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
+
+
 
 function Listing() {
 
@@ -46,23 +45,25 @@ function Listing() {
       }
       
       const br = (<><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></>)
+      
 
+      listing.imageUrls.map((url,index) => (
+        console.log(listing.imageUrls[index]
+      )))
+
+      
   return (
-    <>
-      <Swiper slidesPerView={1} pagination={{ clickable: true }}>
-        {listing.imageUrls.map((url, index) => (
-          <SwiperSlide key={index}>
-            <div
-              style={{
-                background: `url(${listing.imageUrls[index]}) center no-repeat`,
-                backgroundSize: 'cover',
-              }}
-              className='swiperSlideDiv'
-            >{br}</div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+    <div>
+      <div className='sliderrr'>
+        <img className='img' src={listing.imageUrls[0]} alt="" />
+      </div>
     <main>
+        {/*listing.imageUrls.map((url, index) => (
+          <div className='sliderrr'>
+            <img className='img' src={listing.imageUrls[index]} alt="" />
+          </div>
+        ))*/}
+      
 
       <div
         className='shareIconDiv'
@@ -79,55 +80,50 @@ function Listing() {
 
       {shareLinkCopied && <p className='linkCopied'>Link Copied!</p>}
 
-<div className='listingDetails'>
+<div className='listingDetails '>
         <p className='listingName'>
-          {listing.name} - $
+          {listing.name}
+        </p>
+        <p className='listingName'>     
           {listing.offer
             ? listing.discountedPrice
                 .toString()
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
             : listing.regularPrice
                 .toString()
-                .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ',')} تومان
         </p>
         <p className='listingLocation'>{listing.location}</p>
-        <p className='listingType'>
-          For {listing.type === 'rent' ? 'Rent' : 'Sale'}
-        </p>
-        {listing.offer && (
-          <p className='discountPrice'>
-            ${listing.regularPrice - listing.discountedPrice} discount
-          </p>
-        )}
+
+        
 
         <ul className='listingDetailsList'>
           <li>
-            {listing.bedroom > 1
-              ? `${listing.bedroom} Bedrooms`
-              : '1 Bedroom'}
+           مساحت : {listing.Meterage} متر مربع
           </li>
           <li>
-            {listing.bathroom > 1
-              ? `${listing.bathroom} Bathrooms`
-              : '1 Bathroom'}
+          تعداد اتاق : {listing.bedroom} اتاق
           </li>
-          <li>{listing.parking && 'Parking Spot'}</li>
-          <li>{listing.furnished && 'Furnished'}</li>
+
+          <li>{listing.parking && 'دارای پارکینگ'}</li>
+          <li>{listing.furnished && 'مبله'}</li>
+        <p className='listingdiscribe listingDetailsP'>{listing.description}</p>
         </ul>
+
 
         {auth.currentUser?.uid !== listing.userRef && (
           <Link
             to={`/house-marketplace/contact/${listing.userRef}?
             listingName=${listing.name}`}
-            className='primaryButton'
+            className='primaryButton contactLandlord'
           >
-            Contact Landlord
+            ارتباط با مالک
           </Link>
         )}
 
       </div>
     </main>
-    </>
+    </div>
   )
 }
 

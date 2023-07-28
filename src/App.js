@@ -15,6 +15,7 @@ import Contact from './Pages/Contact';
 import EditListing from './Pages/EditListing';
 import Navbar from './Components/Navbar';
 import PrivetRoute from './Components/PrivetRoute';
+import SearchPage from './Pages/SearchPage';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <Route path='/house-marketplace/edit-listing/:listingId' element={<EditListing/>} />
         <Route path='/house-marketplace/contact/:landlordId' element={<Contact/>} />
         <Route path='/house-marketplace/category/:categoryName/:listingId' element={<Listing/>} />
+        <Route path='/house-marketplace/search/:searchId:' element={<SearchPage/>} />
       </Routes> 
       <Navbar/>
     </BrowserRouter>

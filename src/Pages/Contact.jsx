@@ -35,29 +35,29 @@ function Contact() {
   return (
     <div className='pageContainer'>
         <header>
-            <p className='pageHeader'>Contact Landlord</p>
+            <p className='pageHeader'>ارتباط با مالک</p>
         </header>
         {Landlord !==null &&(
                 <main>
                     <div className='contactLandlord'>
-                        <p className='landlordName'>Name : {Landlord.name}</p>
+                        <p className='landlordName'>{Landlord.name}</p>
                     </div>
         <form className='messageForm'>
             <div className='messageDiv'>
                 <label 
                 htmlFor='message'
                 className='messageLabel'>
-                    Massage
+                    پیام
                 </label>
                 <textarea 
-                className='textarea'
+                className='input'
                 name='message'
                 id='message'
                 onChange={onChange}/>
             </div>    
                 <a href={`mailto:${Landlord.email}?subject=${SearchParams.get('listingName')}&body=${Massage}`}>
                     <button className='primaryButton' type='button'>
-                        Send Email
+                        ارسال ایمیل
                     </button>
                 </a>
         </form>

@@ -1,12 +1,12 @@
 import React from 'react'
 import { useEffect , useState } from 'react'
-import { collection  , query , orderBy, limit , startAfter, where, getDocs} from 'firebase/firestore'
+import { collection  , query , orderBy, limit , where, getDocs} from 'firebase/firestore'
 import { db } from '../firebase.config'
 import {toast} from 'react-toastify'
 import ListingItem from '../Components/ListingItem'
 import Spinner from '../Components/Spinner'
 
-function Offer() {
+function Offer( ) {
     
     const [ listings , setListings ] = useState(null)
     const [ loading , serLoading ] = useState(true)
@@ -20,8 +20,8 @@ function Offer() {
                 //Create
                 const q = query(
                     listingRef,
-                    where('offer','==',true),
-                    orderBy('timestamp','desc'),
+                    where('regularPrice','>=', 2000000),
+                    orderBy('regularPrice','desc'),
                     limit(10) 
                 )
                 //Exxcute query
@@ -38,7 +38,7 @@ function Offer() {
                 serLoading(false)
             } catch (error) {
                 console.log(error)
-                toast.error('could not fetch listings')
+                toast.error('خطا در دریافت آگهی ها')
             }
         }
 
@@ -60,6 +60,7 @@ function Offer() {
                         key={listing.id} />
                     ))}
             </main>
+
         </>:<p>No listings for Offers </p>}
     </div>
   )

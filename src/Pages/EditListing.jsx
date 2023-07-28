@@ -21,11 +21,13 @@ function EditListing() {
   const [formData, setFormData] = useState({
     type: 'rent',
     name: '',
+    Meterage:0,
     bedroom: 1,
     bathroom: 1,
     parking: false,
     furnished: false,
     address: '',
+    description:'',
     offer: false,
     regularPrice: 0,
     discountedPrice: 0,
@@ -37,11 +39,13 @@ function EditListing() {
   const {
     type,
     name,
+    Meterage,
     bedroom,
     bathroom,
     parking,
     furnished,
     address,
+    description,
     offer,
     regularPrice,
     discountedPrice,
@@ -252,6 +256,20 @@ function EditListing() {
           />
 
           <div className='formRooms flex'>
+            
+            <div>
+                <label className='formLabel'>Meterage</label>
+                <input
+                  className='formInputSmall'
+                  type='number'
+                  id='Meterage'
+                  value={Meterage}
+                  onChange={onMutate}
+                  min='1'
+                  max='10000'
+                  required
+                />
+              </div>
             <div>
               <label className='formLabel'>Bedrooms</label>
               <input
@@ -265,19 +283,7 @@ function EditListing() {
                 required
               />
             </div>
-            <div>
-              <label className='formLabel'>Bathrooms</label>
-              <input
-                className='formInputSmall'
-                type='number'
-                id='bathroom'
-                value={bathroom}
-                onChange={onMutate}
-                min='1'
-                max='50'
-                required
-              />
-            </div>
+
           </div>
 
           <label className='formLabel'>Parking spot</label>
@@ -306,7 +312,7 @@ function EditListing() {
             </button>
           </div>
 
-          <label className='formLabel'>Furnished</label>
+{/*           <label className='formLabel'>Furnished</label>
           <div className='formButtons'>
             <button
               className={furnished ? 'formButtonActive' : 'formButton'}
@@ -317,7 +323,7 @@ function EditListing() {
             >
               Yes
             </button>
-            <button
+           <button
               className={
                 !furnished && furnished !== null
                   ? 'formButtonActive'
@@ -330,7 +336,7 @@ function EditListing() {
             >
               No
             </button>
-          </div>
+          </div>*/}
 
           <label className='formLabel'>Address</label>
           <textarea
@@ -342,7 +348,7 @@ function EditListing() {
             required
           />
 
-          <label className='formLabel'>Offer</label>
+{/*          <label className='formLabel'>Offer</label>
           <div className='formButtons'>
             <button
               className={offer ? 'formButtonActive' : 'formButton'}
@@ -364,7 +370,7 @@ function EditListing() {
             >
               No
             </button>
-          </div>
+          </div>*/}
 
           <label className='formLabel'>Regular Price</label>
           <div className='formPriceDiv'>
@@ -396,7 +402,16 @@ function EditListing() {
               />
             </>
           )}
-
+          
+          <label className='formLabel'>Description</label>
+                    <textarea
+                      className='formInputAddress'
+                      type='text'
+                      id='description'
+                      value={description}
+                      onChange={onMutate}
+                      required
+                    />      
           <label className='formLabel'>Images</label>
           <p className='imagesInfo'>
             The first image will be the cover (max 6).

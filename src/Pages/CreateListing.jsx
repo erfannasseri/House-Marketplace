@@ -20,11 +20,13 @@ function CreateListing() {
   const [formData, setFormData] = useState({
     type: 'rent',
     name: '',
+    Meterage:0,
     bedroom: 1,
     bathroom: 1,
     parking: false,
     furnished: false,
     address: '',
+    description:'',
     offer: false,
     regularPrice: 0,
     discountedPrice: 0,
@@ -36,11 +38,13 @@ function CreateListing() {
   const {
     type,
     name,
+    Meterage,
     bedroom,
     bathroom,
     parking,
     furnished,
     address,
+    description,
     offer,
     regularPrice,
     discountedPrice,
@@ -216,12 +220,12 @@ function CreateListing() {
   return (
     <div className='profile'>
       <header>
-        <p className='pageHeader'>Create a Listing</p>
+        <p className='pageHeader'>ایجاد آگهی</p>
       </header>
 
       <main>
-        <form onSubmit={onSubmit}>
-          <label className='formLabel'>Sell / Rent</label>
+        <form onSubmit={onSubmit} className='rtl'>
+          <label className='formLabel'>فروش / اجاره</label>
           <div className='formButtons'>
             <button
               type='button'
@@ -230,7 +234,7 @@ function CreateListing() {
               value='sale'
               onClick={onMutate}
             >
-              Sell
+              فروش
             </button>
             <button
               type='button'
@@ -239,11 +243,11 @@ function CreateListing() {
               value='rent'
               onClick={onMutate}
             >
-              Rent
+              اجاره
             </button>
           </div>
 
-          <label className='formLabel'>Name</label>
+          <label className='formLabel'>نام آگهی</label>
           <input
             className='formInputName'
             type='text'
@@ -257,7 +261,20 @@ function CreateListing() {
 
           <div className='formRooms flex'>
             <div>
-              <label className='formLabel'>Bedrooms</label>
+              <label className='formLabel'>متراژ</label>
+              <input
+                className='formInputSmall'
+                type='number'
+                id='Meterage'
+                value={Meterage}
+                onChange={onMutate}
+                min='1'
+                max='10000'
+                required
+              />
+            </div>
+            <div>
+              <label className='formLabel'>اتاق خواب</label>
               <input
                 className='formInputSmall'
                 type='number'
@@ -269,22 +286,10 @@ function CreateListing() {
                 required
               />
             </div>
-            <div>
-              <label className='formLabel'>Bathrooms</label>
-              <input
-                className='formInputSmall'
-                type='number'
-                id='bathroom'
-                value={bathroom}
-                onChange={onMutate}
-                min='1'
-                max='50'
-                required
-              />
-            </div>
+
           </div>
 
-          <label className='formLabel'>Parking spot</label>
+          <label className='formLabel'>پارکینگ</label>
           <div className='formButtons'>
             <button
               className={parking ? 'formButtonActive' : 'formButton'}
@@ -295,7 +300,7 @@ function CreateListing() {
               min='1'
               max='50'
             >
-              Yes
+              دارد
             </button>
             <button
               className={
@@ -306,11 +311,11 @@ function CreateListing() {
               value={false}
               onClick={onMutate}
             >
-              No
+              ندارد
             </button>
           </div>
 
-          <label className='formLabel'>Furnished</label>
+{/*           <label className='formLabel'>Furnished</label>
           <div className='formButtons'>
             <button
               className={furnished ? 'formButtonActive' : 'formButton'}
@@ -321,7 +326,7 @@ function CreateListing() {
             >
               Yes
             </button>
-            <button
+           <button
               className={
                 !furnished && furnished !== null
                   ? 'formButtonActive'
@@ -334,9 +339,9 @@ function CreateListing() {
             >
               No
             </button>
-          </div>
+          </div>*/}
 
-          <label className='formLabel'>Address</label>
+          <label className='formLabel'>آدرس</label>
           <textarea
             className='formInputAddress'
             type='text'
@@ -373,7 +378,7 @@ function CreateListing() {
             </div>
           )}*/}
 
-          <label className='formLabel'>Offer</label>
+{/*          <label className='formLabel'>Offer</label>
           <div className='formButtons'>
             <button
               className={offer ? 'formButtonActive' : 'formButton'}
@@ -395,9 +400,9 @@ function CreateListing() {
             >
               No
             </button>
-          </div>
+          </div>*/}
 
-          <label className='formLabel'>Regular Price</label>
+          <label className='formLabel'>قیمت</label>
           <div className='formPriceDiv'>
             <input
               className='formInputSmall'
@@ -406,10 +411,11 @@ function CreateListing() {
               value={regularPrice}
               onChange={onMutate}
               min='50'
-              max='750000000'
+              max='7500000000000'
               required
-            />
-            {type === 'rent' && <p className='formPriceText'>$ / Month</p>}
+            />            
+            {type === 'sale' && <p className='formPriceText'>میلیون تومان</p>}
+            {type === 'rent' && <p className='formPriceText'>تومان در ماه</p>}
           </div>
 
           {offer && (
@@ -428,7 +434,17 @@ function CreateListing() {
             </>
           )}
 
-          <label className='formLabel'>Images</label>
+          <label className='formLabel'>توضیحات</label>
+                    <textarea
+                      className='formInputAddress'
+                      type='text'
+                      id='description'
+                      value={description}
+                      onChange={onMutate}
+                      required
+                    />
+
+          <label className='formLabel'>تصاویر</label>
           <p className='imagesInfo'>
             The first image will be the cover (max 6).
           </p>

@@ -30,9 +30,9 @@ function Oauth() {
                 })
             }
             navigate('/house-marketplace')
-            toast.success('You are sign in')
+            toast.success('شما با موفقیت وارد شدید')
        } catch (error) {
-        toast.error('Could not authorize with Google')
+        toast.error('ارتباط با گوگل با موفقیت برقرار نشد!')
         console.log(error)
        } 
         
@@ -40,7 +40,7 @@ function Oauth() {
 
   return (
     <div className='socialLogin'>
-        <p>Sign {Loaction.pathname==='/sign-up'?'up':'in'} with</p>
+        <p>{Loaction.pathname==='/sign-up'?'ثبت نام':'ورود'} با</p>
         <button className='socialIconDiv' onClick={onGoogleClick}>
             <img className='socialIconImg' src={googleIcon} alt="google" />
         </button>

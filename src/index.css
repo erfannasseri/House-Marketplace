@@ -2,10 +2,18 @@
 * {
   box-sizing: border-box;
 }
-categoryListingLocation
+
 @font-face {
-  font-family: shabnam;
-  src: url(./assets/font/Shabnam.woff);
+  font-family: 'Shabnam';
+  src: url('./Font/Shabnam.woff') format('woff'),
+      url('./Font/Shabnam.woff2') format('woff2')
+  ;
+}
+@font-face {
+  font-family: 'Shabnam';
+  src: url('./Font/Shabnam.woff') format('woff'),
+      url('./Font/Shabnam.woff2') format('woff2')
+  ;
 }
 
 html::-webkit-scrollbar {
@@ -13,10 +21,19 @@ html::-webkit-scrollbar {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #d8e3e2;
+ 
+  display: flex;
+
+  align-content: center;
+
+  font-family: 'Shabnam';
+  background: rgb(219,255,251);
+  background: radial-gradient(circle, rgba(219,255,251,1) 0%, rgba(244,255,254,1) 100%);
   margin: 0;
   box-sizing: border-box;
+  text-align: right;
+  justify-content: center;
+  
 }
 
 a {
@@ -42,7 +59,7 @@ button {
   height: 3rem;
   width: 100%;
   outline: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Shabnam';
   padding: 0 3rem;
   font-size: 1rem;
 }
@@ -63,6 +80,7 @@ button {
 }
 
 .primaryButton {
+  font-family: shabnam;
   cursor: pointer;
   background: #00cc66;
   border-radius: 1rem;
@@ -77,37 +95,68 @@ button {
   justify-content: center;
 }
 
+.removeAndEdit{
+  flex: content;
+  flex-direction: column;
+  margin: 0.1rem;
+}
 .removeIcon {
   cursor: pointer;
-  position: absolute;
+  position: relative;
   top: -3%;
   right: -2%;
+  margin:0.5rem;
 }
 .editIcon {
   cursor: pointer;
-  position: absolute;
+  position: relative;
   top: -3.4%;
   right: 20px;
+  
 }
 
 .pageContainer,
 .offers,
 .profile,
-.listingDetails,
 .category,
 .explore {
-  margin: 1rem;
+  margin: 0.5rem;
+  
 }
+
+.listingDetails {
+  display: block;
+  margin: 2rem;
+  padding-top: 0.5rem;
+}
+.listingDetails p{
+  line-height: 2rem;
+}
+@media (max-width: 1024px) {
+
+  .listingDetails{
+    margin: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
 @media (min-width: 1024px) {
   .pageContainer,
   .offers,
+  .body,
   .profile,
-  .listingDetails,
   .category,
   .explore {
-    margin: 3rem;
+    display: inline-block;
+   
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
   }
 }
+
 
 .loadingSpinnerContainer {
   position: fixed;
@@ -155,6 +204,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: -1px -3px 9px 5px rgba(0,0,0,0.12);
 }
 
 .navbarNav {
@@ -238,12 +288,7 @@ button {
 .signUpText {
   cursor: pointer;
 }
-@media (min-width: 1024px) {
-  .signInBar,
-  .signUpBar {
-    justify-content: start;
-  }
-}
+
 
 .signInText,
 .signUpText {
@@ -261,12 +306,7 @@ button {
   background-color: #00cc66;
   border-radius: 50%;
 }
-@media (min-width: 1024px) {
-  .signInButton,
-  .signUpButton {
-    margin-left: 3rem;
-  }
-}
+
 
 .socialLogin {
   margin-top: 4rem;
@@ -306,9 +346,11 @@ button {
     margin-bottom: 10rem;
   }
 }
-@media (max-height: 536) {
+@media (max-height: 800) {
   .explore {
     margin-bottom: 10rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -331,9 +373,18 @@ button {
 }
 
 .swiperSlideDiv {
+  display: flex;
   position: relative;
   width: 100%;
   height: 50%;
+}
+
+@media screen and (min-width: 1024px){
+  .swiperSlideDiv {
+    display: flex;    
+    padding-left: 10%;
+    padding-right: 10%;
+  }
 }
 
 .swiperSlideImg {
@@ -373,12 +424,15 @@ button {
 @media (min-width: 1024px) {
   .swiperSlidePrice {
     font-size: 1.25rem;
+    padding-left: 10%;
+    padding-right: 10%;
   }
 }
 
 .exploreCategories {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 1rem;
 }
 .exploreCategories a {
   width: 48%;
@@ -395,7 +449,7 @@ button {
 
 .exploreCategoryName {
   font-weight: 500;
-  text-align: left;
+  text-align: right;
 }
 
 .category {
@@ -407,12 +461,30 @@ button {
   
 }
 
-.categoryListing {
+.categoryListing2 {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   margin-bottom: 1rem;
   position: relative;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.754);
+  border-radius: 1.5rem;
+  direction: rtl;
+  box-shadow: -1px 3px 9px 5px rgba(0,0,0,0.12);
+  animation: myAnim 1s ease 0s 1 normal forwards;
+}
+.categoryListing {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  position: relative;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.754);
+  border-radius: 1.5rem;
+  direction: rtl;
+  box-shadow: -1px 3px 9px 5px rgba(0,0,0,0.12);
+  animation: myAnim 1s ease 0s 1 normal forwards;
 }
 
 .categoryListingLink {
@@ -446,7 +518,7 @@ button {
   font-size: 0.7rem;
   opacity: 0.8;
   margin-bottom: 0;
-  margin-left: 1rem;
+  margin-right: 1rem;
  
 }
 
@@ -454,25 +526,25 @@ button {
   font-weight: 600;
   font-size: 1.25rem;
   margin: 0;
-  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .categoryListingPrice {
   margin-top: 0.5rem;
-  margin-left: 1rem;
+  margin-right: 1rem;
   font-weight: 600;
   font-size: 1.1rem;
   color: #00cc66;
   margin-bottom: 0;
-  display: flex;
-  align-items: center;
+
+  text-align: right;
 }
 
 .categoryListingInfoDiv {
   display: flex;
   justify-content: space-between;
   max-width: 275px;
-  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .categoryListingInfoText {
@@ -523,6 +595,14 @@ button {
   margin-top: 0;
   font-weight: 600;
 }
+.listingdiscribe {
+  margin-top: 0;
+  font-weight: 500;
+  align-items: center;
+  max-width: 35rem;
+
+
+}
 
 .discountPrice {
   padding: 0.25rem 0.5rem;
@@ -534,9 +614,39 @@ button {
   display: inline;
 }
 
+.listingType2 {
+  padding: 0.25rem 0.5rem;
+  background-color: #65656533;
+  color: #000000;
+  border-radius: 2rem;
+  display: inline;
+  font-weight: 600;
+  font-size: 0.6rem;
+  margin-right: 1rem;
+}
 .listingType {
   padding: 0.25rem 0.5rem;
   background-color: #00cc66;
+  color: #ffffff;
+  border-radius: 2rem;
+  display: inline;
+  font-weight: 600;
+  font-size: 0.8rem;
+  margin-right: 1rem;
+}
+.bedroom {
+  padding: 0.25rem 0.5rem;
+  background-color: #cc8f00;
+  color: #ffffff;
+  border-radius: 2rem;
+  display: inline;
+  font-weight: 600;
+  font-size: 0.8rem;
+  margin-right: 1rem;
+}
+.bathroom {
+  padding: 0.25rem 0.5rem;
+  background-color: #007ecc;
   color: #ffffff;
   border-radius: 2rem;
   display: inline;
@@ -553,6 +663,7 @@ button {
   margin: 0.3rem 0;
   font-weight: 500;
   opacity: 0.8;
+  
 }
 
 .listingLocationTitle {
@@ -633,7 +744,7 @@ button {
 
 .logOut {
   cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Shabnam';
   font-size: 1rem;
   font-weight: 600;
   color: #ffffff;
@@ -663,7 +774,9 @@ button {
   border-radius: 1rem;
   padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.2);
-  max-width: 500px;
+
+  box-shadow: -1px 3px 9px 5px rgba(0,0,0,0.12);
+  animation: myAnim 1s ease 0s 1 normal forwards;
 }
 
 .profileDetails {
@@ -704,13 +817,15 @@ button {
   background-color: #ffffff;
   border-radius: 1rem;
   padding: 0.25rem 1rem;
-  box-shadow: rgba(0, 0, 0, 0.2);
+
   margin-top: 2rem;
   font-weight: 600;
-  max-width: 500px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: -1px 3px 9px 5px rgba(0,0,0,0.12);
+  animation: myAnim 1s ease 0s 1 normal forwards;
 }
 
 .listingText {
@@ -732,6 +847,22 @@ button {
   display: flex;
 }
 
+.rtl{
+  direction: rtl;
+}
+.ltr{
+  direction: ltr;
+  text-align: left;
+}
+
+.formInput,
+.formInputAddress,
+.formInputName,
+.formInputSmall,
+.formInputFile,
+.formButtonActive {
+  cursor: pointer;
+}
 .formButton,
 .formInput,
 .formInputAddress,
@@ -739,15 +870,20 @@ button {
 .formInputSmall,
 .formInputFile,
 .formButtonActive {
+  direction: rtl;
   padding: 0.9rem 3rem;
   background-color: #ffffff;
   font-weight: 600;
+  font-family: Shabnam;
   border-radius: 1rem;
   font-size: 1rem;
   margin: 0.5rem 0.5rem 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: -1px 3px 9px 5px rgba(0,0,0,0.12);
+  animation: myAnim 1s ease 0s 1 normal forwards;
+
 }
 .formButtonActive {
   background-color: #00cc66;
@@ -765,11 +901,11 @@ button {
 .formInputFile {
   border: none;
   outline: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Shabnam';
 }
 .formInputSmall,
 .formInputFile {
-  margin-right: 3rem;
+  margin-right: .5rem;
   padding: 0.9rem 0.7rem;
   text-align: center;
 }
@@ -792,7 +928,7 @@ button {
 }
 
 .formPriceText {
-  margin-left: -1.5rem;
+  margin-right: 1.5rem;
   font-weight: 600;
 }
 
@@ -827,7 +963,154 @@ button {
   background-color: #000000;
   color: #ffffff;
   border-radius: 1rem;
-  margin-left: 1rem;
+  margin-right: 1rem;
   font-size: 0.8rem;
   opacity: 0.75;
+}
+
+@media screen and (max-width: 550px) {
+  .formButton {
+      font-size: 16px;
+      padding: 0.3rem 1rem;
+  }
+  .formButtonActive {
+      
+      padding: 0.9rem 1rem;
+  }
+  .formInputAddress {
+    font-size: 16px;
+  }
+  
+}
+
+
+
+
+.gpt3__navbar-menu_container button {
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background: #FF4820;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.gpt3__navbar-menu {
+  margin-left: 1rem;
+  position: relative;
+}
+
+.gpt3__navbar-menu svg {
+  cursor: pointer;
+}
+
+.gpt3__navbar-menu_container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+  text-align: end;
+
+  padding: 1rem;
+  background: #00cc661e;
+  margin: 1rem;
+  min-width: 210px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0,0, 0,0.2);
+}
+
+.gpt3__navbar-menu_container p {
+  
+}
+.scale-up-center {
+	-webkit-animation: scale-up-center 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	animation: scale-up-center 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+}
+
+.slide {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+.slide img {
+  width: 100%;
+}
+.slider-nav {
+  text-align: center;
+  margin-top: 10px;
+}
+.slider-nav a {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #bbb;
+  margin-right: 5px;
+}
+.slider-nav a.active {
+  background-color: #717171;
+}
+.img{
+  display: flex;
+  align-items: center;
+  width:100%;
+  height:100%;
+}
+.sliderrr{
+  display: flex;
+ margin-top: 0;
+  padding-top: 0.5rem;
+  height: 500px;
+  
+}
+@media screen and (max-width: 550px) {
+  .sliderrr{
+    height: auto;
+  }
+}
+.search{
+  background-color: #00cc66;
+  border-radius: 1.5rem;
+}
+
+.categoryListing:hover {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  box-shadow: -1px 3px 9px 5px rgba(0,0,0,0.12);
+  -webkit-box-shadow: -1px 3px 9px 5px rgba(0,0,0,0.2);
+  -moz-box-shadow: -1px 3px 9px 5px rgba(0,0,0,0.2);
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+.col{
+  
+  flex-direction: column;
 }
