@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/house-marketplace/static/css/main.92b7a243.css",
-    "main.js": "/house-marketplace/static/js/main.48727be8.js",
+    "main.css": "/house-marketplace/static/css/main.10fb2744.css",
+    "main.js": "/house-marketplace/static/js/main.776e9a4b.js",
     "static/media/sellCategoryImage.jpg": "/house-marketplace/static/media/sellCategoryImage.c4d28ee7217d692d13fb.jpg",
     "static/media/rentCategoryImage.jpg": "/house-marketplace/static/media/rentCategoryImage.cd9f015021c041d9ad87.jpg",
     "static/media/Shabnam.woff": "/house-marketplace/static/media/Shabnam.72c246af45e0b9e89ad2.woff",
+    "static/media/Shabnam.woff2": "/house-marketplace/static/media/Shabnam.fd76903f885c2265d409.woff2",
     "static/media/googleIcon.svg": "/house-marketplace/static/media/googleIcon.a2a9c863d781c3e8abab4e7390cde6cb.svg",
+    "static/media/parking-svgrepo-com.svg": "/house-marketplace/static/media/parking-svgrepo-com.4b07be531aa06614c2752e5bc8fa5dae.svg",
+    "static/media/ruler-svgrepo-com.svg": "/house-marketplace/static/media/ruler-svgrepo-com.9f83faf27bef8ca185fd442281aff023.svg",
     "index.html": "/house-marketplace/index.html",
-    "static/media/bathtubIcon.svg": "/house-marketplace/static/media/bathtubIcon.b95c8ddb4dae960083f7c6ba713cbb50.svg",
     "static/media/badgeIcon.svg": "/house-marketplace/static/media/badgeIcon.6a60b5bc1167fef5e6d0.svg",
     "static/media/shareIcon.svg": "/house-marketplace/static/media/shareIcon.cbe96fad91328dae35508b04182f4a7e.svg",
     "static/media/bedIcon.svg": "/house-marketplace/static/media/bedIcon.eefa75b10479ecc5ec087e92666866eb.svg",
@@ -21,11 +23,11 @@
     "static/media/deleteIcon.svg": "/house-marketplace/static/media/deleteIcon.a53e22036f5f02bda3f291072d6c5f80.svg",
     "static/media/keyboardArrowRightIcon.svg": "/house-marketplace/static/media/keyboardArrowRightIcon.8cee54bec29003f4c3faa8f2acfa6de8.svg",
     "static/media/homeIcon.svg": "/house-marketplace/static/media/homeIcon.09f28a7193ed1624e778ad88fc51ab56.svg",
-    "main.92b7a243.css.map": "/house-marketplace/static/css/main.92b7a243.css.map",
-    "main.48727be8.js.map": "/house-marketplace/static/js/main.48727be8.js.map"
+    "main.10fb2744.css.map": "/house-marketplace/static/css/main.10fb2744.css.map",
+    "main.776e9a4b.js.map": "/house-marketplace/static/js/main.776e9a4b.js.map"
   },
   "entrypoints": [
-    "static/css/main.92b7a243.css",
-    "static/js/main.48727be8.js"
+    "static/css/main.10fb2744.css",
+    "static/js/main.776e9a4b.js"
   ]
 }
